@@ -5,7 +5,7 @@
   "repository": "https://github.com/UsulPro/theme-name.git",
   "scripts": {
     "start": "start-storybook -p 6006 --ci",
-    "prepare": "rm -rf dist && babel src --out-dir dist --verbose",
+    "prepare": "package-prepare",
     "lintfix": "eslint --fix src",
     "test": "jest",
     "tdd": "jest --watchAll"
@@ -15,6 +15,7 @@
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.2.3",
+    "@usulpro/package-prepare": "^1.0.5",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
