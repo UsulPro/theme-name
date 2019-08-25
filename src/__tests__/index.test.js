@@ -20,24 +20,46 @@ const BigTheme = {
 describe(__filename, () => {
   it('should create big theme name', () => {
     const theme = {
-      main: [BigTheme.mainColor, BigTheme.badgeBackgroundColor],
-      accent: [BigTheme.pink],
+      main: {
+        mainColor: BigTheme.mainColor,
+        badgeBackgroundColor: BigTheme.badgeBackgroundColor,
+      },
+      accent: { pink: BigTheme.pink },
     };
     expect(themeName(theme)).toMatchInlineSnapshot(`"Flickr Blue Red Orange"`);
   });
 
   it('should create small theme name', () => {
     const theme = {
-      main: [BigTheme.badgeBackgroundColor],
-      accent: [BigTheme.pink],
+      main: {
+        mainColor: BigTheme.mainColor,
+      },
+      accent: { pink: BigTheme.pink },
     };
-    expect(themeName(theme)).toMatchInlineSnapshot(`"Red Orange Medium Pink"`);
+    expect(themeName(theme)).toMatchInlineSnapshot(`"Flickr Blue Medium Pink"`);
   });
 
   it('should create tiny theme name', () => {
     const theme = {
-      accent: [BigTheme.pink],
+      accent: { pink: BigTheme.pink },
     };
     expect(themeName(theme)).toMatchInlineSnapshot(`"Medium Pink"`);
+  });
+
+  it('should create usual theme name', () => {
+    const theme = {
+      main: BigTheme.pink,
+      red: BigTheme.badgeBackgroundColor,
+    };
+    expect(themeName(theme)).toMatchInlineSnapshot(`"Medium Pink Red Orange"`);
+  });
+
+  it('should create theme name by provided name', () => {
+    const theme = {
+      themeName: 'Light Theme',
+      main: BigTheme.pink,
+      red: BigTheme.badgeBackgroundColor,
+    };
+    expect(themeName(theme)).toMatchInlineSnapshot(`"Light Theme"`);
   });
 });

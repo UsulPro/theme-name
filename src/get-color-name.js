@@ -8,4 +8,13 @@ const colors = namedColors.reduce(
 
 const nearest = nearestColor.from(colors);
 
-export const getColorName = color => nearest(color).name;
+export const getColorName = color => {
+  try {
+    if (!color) return undefined;
+    const colorInfo = nearest(color);
+    if (!colorInfo) return undefined;
+    return colorInfo.name;
+  } catch (err) {
+    return undefined;
+  }
+};
