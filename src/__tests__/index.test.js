@@ -62,4 +62,24 @@ describe(__filename, () => {
     };
     expect(themeName(theme)).toMatchInlineSnapshot(`"Light Theme"`);
   });
+
+  it('should return theme ind', () => {
+    const theme = {
+      colors: {
+        main: BigTheme.pink,
+        red: BigTheme.badgeBackgroundColor,
+      },
+    };
+    expect(themeName(theme, 0)).toBe('theme 1');
+  });
+
+  it('should return undefined', () => {
+    const theme = {
+      colors: {
+        main: BigTheme.pink,
+        red: BigTheme.badgeBackgroundColor,
+      },
+    };
+    expect(themeName(theme)).toBe(undefined);
+  });
 });

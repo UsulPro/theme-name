@@ -27,5 +27,5 @@ export const themeName = (theme, ind) => {
     .trim();
   if (generatedName) return generatedName;
 
-  return `theme ${ind}`;
+  return ind !== undefined ? `theme ${ind + 1}` : undefined;
 };

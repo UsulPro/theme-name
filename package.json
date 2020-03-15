@@ -5,6 +5,7 @@
   "repository": "https://github.com/UsulPro/theme-name.git",
   "scripts": {
     "start": "start-storybook -p 6006 --ci",
+    "dev": "nodemon --exec yarn prepare",
     "prepare": "package-prepare",
     "lintfix": "eslint --fix src",
     "test": "jest",
@@ -27,6 +28,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "jest": "^24.8.0",
+    "nodemon": "^2.0.2",
     "prettier": "^1.17.1"
   },
   "author": "Oleg Proskurin <regx@usul.su>",
